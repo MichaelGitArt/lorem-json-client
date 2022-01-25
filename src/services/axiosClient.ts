@@ -1,8 +1,9 @@
 import axios from 'axios'
 
 export const axiosClient = axios.create({
-  baseURL: 'https://lorem-json.herokuapp.com/',
+  baseURL: import.meta.env.VITE_SERVER_URL,
   headers: {
     'Content-Type': 'application/json',
   },
+  validateStatus: () => true,
 })
