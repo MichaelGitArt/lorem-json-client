@@ -1,5 +1,5 @@
 import type { NavigationGuard, NavigationGuardNext } from 'vue-router'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/pages/Home.vue'
 import Piece from '@/pages/Piece.vue'
 
@@ -48,7 +48,7 @@ const getRouterAuthGuard = (status: UserStatus = 'all'): NavigationGuard => {
 }
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
 
   routes: [
     {
