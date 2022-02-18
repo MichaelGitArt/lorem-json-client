@@ -21,8 +21,8 @@ const onLogout = () => {
         to="/"
         custom
       >
-        <QToolbarTitle @click="navigate">
-          LoremJSON
+        <QToolbarTitle class="cursor-pointer" @click="navigate">
+          Lorem<span class="font-bold">JSON</span>
         </QToolbarTitle>
       </RouterLink>
 
