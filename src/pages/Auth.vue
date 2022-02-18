@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { login, register } from '@/store/user'
+import { useUserStore } from '@/store/user'
 
 const loading = ref(false)
 const username = ref('michael')
 const password = ref('qqqq')
 
 const router = useRouter()
+const userStore = useUserStore()
 
 const onRegister = async() => {
   loading.value = true
-  const success = await register({
+  const success = await userStore.register({
     password: password.value,
     username: username.value,
   })
@@ -20,7 +21,7 @@ const onRegister = async() => {
 }
 const onLogin = async() => {
   loading.value = true
-  const success = await login({
+  const success = await userStore.login({
     password: password.value,
     username: username.value,
   })

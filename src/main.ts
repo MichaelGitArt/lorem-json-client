@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { Quasar } from 'quasar'
+import { createPinia } from 'pinia'
 
 import '@quasar/extras/material-icons/material-icons.css'
 import 'quasar/src/css/index.sass'
@@ -13,4 +14,5 @@ import { router } from './router'
 createApp(App)
   .use(Quasar)
   .use(router)
+  .use(createPinia())
   .mount('#app')

@@ -1,5 +1,14 @@
+<script setup lang="ts" >
+import TheHeader from './components/Interface/TheHeader.vue'
+import TheLayout from './components/Interface/TheLayout.vue'
+</script>
+
 <template>
-  <QLayout class="container mx-auto py-10">
+  <TheLayout>
+    <template #header>
+      <TheHeader />
+    </template>
+
     <RouterView />
-  </QLayout>
+  </TheLayout>
 </template>

@@ -6,18 +6,18 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig({
   plugins: [
-    Vue({
-    }),
+    Vue({}),
     WindiCSS({
-      config: {
-        preflight: false,
-      },
+      configFiles: [
+        path.resolve('./windi.config.ts'),
+      ],
     }),
     AutoImport({
       imports: [
         'vue',
         '@vueuse/core',
         'vue-router',
+        'pinia',
       ],
       dts: './src/auto-imports.d.ts',
     }),
