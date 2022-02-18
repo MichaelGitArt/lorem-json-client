@@ -61,7 +61,7 @@ const onLogout = () => {
         :to="{name: ROUTE_NAME.auth}"
         outline
       >
-        Login
+        Log In
       </QBtn>
     </QToolbar>
   </QHeader>

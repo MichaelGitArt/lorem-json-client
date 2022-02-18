@@ -34,31 +34,44 @@ const onLogin = async() => {
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col items-center py-6">
     <h1 class="text-4xl font-semibold">
       Auth
     </h1>
 
-    <div class="grid gap-3 max-w-100">
+    <QForm class="grid gap-4 max-w-100 w-full">
       <QInput
         v-model="username"
         standout="bg-teal text-white"
+        name="username"
+        autocomplete="username"
         label="Username"
       />
       <QInput
         v-model="password"
         standout="bg-teal text-white"
+        name="current-password"
+        autocomplete="current-password"
+        type="password"
         label="Password"
       />
 
-      <div class="grid grid-cols-2 gap-3">
-        <QBtn :loading="loading" @click="onLogin">
+      <div class="grid grid-cols-2 gap-3 pt-4">
+        <QBtn
+          :loading="loading"
+          type="submit"
+          @click.prevent="onLogin"
+        >
           Sign in
         </QBtn>
-        <QBtn :loading="loading" @click="onRegister">
+        <QBtn
+          :loading="loading"
+          type="submit"
+          @click.prevent="onRegister"
+        >
           Sign up
         </QBtn>
       </div>
-    </div>
+    </QForm>
   </div>
 </template>
