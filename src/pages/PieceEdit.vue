@@ -75,7 +75,7 @@ const onCopyApiLink = () => {
 }
 
 const onViewApi = () => {
-  window.open(apiLink.value, '_blank').focus()
+  window.open(apiLink.value, '_blank')?.focus()
 }
 </script>
 
