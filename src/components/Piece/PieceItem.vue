@@ -16,7 +16,7 @@ const pieceRoute = computed<RouteLocationRaw>(() => ({
   },
 }))
 
-const apiLink = computed(() => genPieceApiLink(props.piece._id))
+const apiLink = genPieceApiLink(computed(() => props.piece._id))
 
 const { copy, copied } = useClipboard()
 const onCopyApiLink = () => {

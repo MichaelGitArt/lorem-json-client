@@ -26,7 +26,7 @@ watchOnce(piece, () => {
   jsonValue.value = JSON.parse(piece.value!.json)
 })
 
-const apiLink = computed(() => piece.value && genPieceApiLink(piece.value._id))
+const apiLink = genPieceApiLink(computed(() => piece.value ? piece.value._id : null))
 
 const onChangeJson = (value: string) => {
   if (piece.value)

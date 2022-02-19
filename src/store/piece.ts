@@ -21,7 +21,7 @@ export const usePieceStore = defineStore('piece', {
 
   actions: {
     async  getPiece(idRef: MaybeRef<string>): Promise<IPiece> {
-      const id = typeof idRef === 'object' ? idRef.value : idRef
+      const id = unref(idRef)
 
       if (id === 'create')
         return cloneDeep(piecePlaceholder)
@@ -35,7 +35,8 @@ export const usePieceStore = defineStore('piece', {
     },
 
     async  deletePiece(idRef: MaybeRef<string>): Promise<IPiece> {
-      const id = typeof idRef === 'object' ? idRef.value : idRef
+      const id = unref(idRef)
+
       const userStore = useUserStore()
 
       const { data } = await pieceService.deletePiece({
