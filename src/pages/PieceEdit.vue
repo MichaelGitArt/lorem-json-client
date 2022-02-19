@@ -71,12 +71,10 @@ const onDelete = async() => {
 
 const { copy, copied } = useClipboard()
 const onCopyApiLink = () => {
-  console.warn('piece', piece.value)
   copy(apiLink.value)
 }
 
 const onViewApi = () => {
-  console.warn('piece', piece.value)
   window.open(apiLink.value, '_blank')?.focus()
 }
 </script>
