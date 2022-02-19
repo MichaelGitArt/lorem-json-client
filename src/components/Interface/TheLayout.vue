@@ -1,6 +1,6 @@
 <template>
   <QLayout
-    view="hHh lpr fFf"
+    view="hHh lpr fff"
   >
     <slot name="header" />
 

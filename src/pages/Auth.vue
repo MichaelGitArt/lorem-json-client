@@ -2,8 +2,8 @@
 import { useUserStore } from '@/store/user'
 
 const loading = ref(false)
-const username = ref('michael')
-const password = ref('qqqq')
+const username = ref('')
+const password = ref('')
 
 const router = useRouter()
 const userStore = useUserStore()
@@ -59,17 +59,19 @@ const onLogin = async() => {
       <div class="grid grid-cols-2 gap-3 pt-4">
         <QBtn
           :loading="loading"
+          outline
           type="submit"
           @click.prevent="onLogin"
         >
-          Sign in
+          Log in
         </QBtn>
         <QBtn
           :loading="loading"
+          outline
           type="submit"
           @click.prevent="onRegister"
         >
-          Sign up
+          Register
         </QBtn>
       </div>
     </QForm>

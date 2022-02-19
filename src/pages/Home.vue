@@ -17,6 +17,9 @@ const { user } = storeToRefs(userStore)
         <QBtn
           v-if="user"
           size="lg"
+          color="blue"
+          outline
+          class="px-8"
           :to="{name: ROUTE_NAME.pieceList}"
         >
           <div class="capitalize">
@@ -27,6 +30,9 @@ const { user } = storeToRefs(userStore)
         <QBtn
           v-else
           size="lg"
+          color="blue"
+          outline
+          class="px-8"
           :to="{name: ROUTE_NAME.auth}"
         >
           <div class="capitalize">
