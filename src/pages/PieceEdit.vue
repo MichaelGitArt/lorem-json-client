@@ -68,6 +68,15 @@ const onDelete = async() => {
     name: ROUTE_NAME.pieceList,
   })
 }
+
+const { copy, copied } = useClipboard()
+const onCopyApiLink = () => {
+  copy(apiLink.value)
+}
+
+const onViewApi = () => {
+  window.open(apiLink.value, '_blank').focus()
+}
 </script>
 
 <template>
@@ -80,14 +89,27 @@ const onDelete = async() => {
           Piece: {{ piece?.name }}
         </PageTitle>
 
-        Link:
-        <a
-          v-if="apiLink"
-          target="_blank"
-          :href="apiLink"
-        >
-          {{ apiLink }}
-        </a>
+        <div class="flex gap-4">
+          <QBtn
+            color="blue"
+            outline
+            @click="onCopyApiLink"
+          >
+            Copy Api Link
+
+            <QTooltip v-if="copied" :model-value="copied">
+              Copied!
+            </QTooltip>
+          </QBtn>
+
+          <QBtn
+            color="blue"
+            outline
+            @click="onViewApi"
+          >
+            View Api
+          </QBtn>
+        </div>
       </PageBlock>
 
       <PageBlock>

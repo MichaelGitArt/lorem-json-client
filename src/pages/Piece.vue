@@ -27,16 +27,19 @@ const pieceListRoute = computed<RouteLocationRaw>(() => ({
       <template #actions>
         <QBtn
           v-if="route.name !== ROUTE_NAME.pieceEdit"
-          color="green"
+          color="blue"
           :to="createPieceRoute"
         >
-          Create
+          Create Piece
         </QBtn>
+
         <QBtn
           v-else
+          outline
+          color="blue"
           :to="pieceListRoute"
         >
-          List
+          Pieces List
         </QBtn>
       </template>
     </PageTitle>
